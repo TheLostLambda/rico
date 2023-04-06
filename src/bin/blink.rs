@@ -24,9 +24,11 @@ async fn main(_spawner: Spawner) {
 
         // Turn LED On
         led.set_high();
+        // You could also replace `set_high` and `set_low` with `toggle`!
+        // led.toggle();
 
         // Wait 100ms
-        Timer::after(Duration::from_millis(100)).await;
+        Timer::after(Duration::from_secs(1)).await;
 
         // Log
         info!("LED Off!");
@@ -35,6 +37,6 @@ async fn main(_spawner: Spawner) {
         led.set_low();
 
         // Wait 100ms
-        Timer::after(Duration::from_millis(100)).await;
+        Timer::after(Duration::from_secs(1)).await;
     }
 }
