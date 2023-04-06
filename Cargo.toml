@@ -12,5 +12,7 @@ defmt-rtt = "0.3"
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 
 embassy-executor = { version = "0.1.0", git = "https://github.com/embassy-rs/embassy", features = ["defmt", "integrated-timers"] }
+embassy-futures = { version = "0.1.0", git = "https://github.com/embassy-rs/embassy", features = ["defmt"] }
+embassy-sync = { version = "0.1.0", git = "https://github.com/embassy-rs/embassy", features = ["nightly"] }
 embassy-time = { version = "0.1.0", git = "https://github.com/embassy-rs/embassy", features = ["defmt", "defmt-timestamp-uptime"] }
 embassy-rp = { version = "0.1.0", git = "https://github.com/embassy-rs/embassy", features = ["defmt", "unstable-traits", "nightly", "unstable-pac", "time-driver"] }

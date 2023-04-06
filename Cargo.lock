@@ -253,6 +253,9 @@ dependencies = [
 name = "embassy-futures"
 version = "0.1.0"
 source = "git+https://github.com/embassy-rs/embassy#eeb1515e9fd093e4a9797abac25ca657e1e35dc3"
+dependencies = [
+ "defmt",
+]
 
 [[package]]
 name = "embassy-hal-common"
@@ -309,7 +312,9 @@ dependencies = [
  "defmt",
  "defmt-rtt",
  "embassy-executor",
+ "embassy-futures",
  "embassy-rp",
+ "embassy-sync",
  "embassy-time",
  "panic-probe",
 ]
