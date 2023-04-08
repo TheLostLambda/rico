@@ -24,7 +24,6 @@ async fn main(spawner: Spawner) {
     Output::new(p.PIN_25, Level::Low);
 
     // Set up the other two LEDs (one on, one off)
-    // It would be nice to see if I could squish these into an array...
     let leds = [
         Output::new(p.PIN_13.degrade(), Level::High),
         Output::new(p.PIN_15.degrade(), Level::Low),
