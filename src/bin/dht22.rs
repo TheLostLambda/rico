@@ -23,15 +23,15 @@ async fn main(_spawner: Spawner) {
 
     // Loop
     loop {
-        match dht22::Reading::read(&mut Delay, &mut sensor_pin) {
+        match dht22::read(&mut Delay, &mut sensor_pin).await {
             Ok(dht22::Reading {
                 temperature,
                 relative_humidity,
-            }) => info!("{}°, {}% RH", temperature, relative_humidity),
+            }) => info!("{}°C, {}% RH", temperature, relative_humidity),
             Err(e) => match e {
-                DhtError::PinError(_) => info!("Pin Error!"),
-                DhtError::ChecksumMismatch => info!("Checksum Mismatch!"),
-                DhtError::Timeout => info!("Timeout!"),
+                DhtError::PinError(_) => error!("Pin Error!"),
+                DhtError::ChecksumMismatch => error!("Checksum Mismatch!"),
+                DhtError::Timeout => error!("Timeout!"),
             },
         }
 
